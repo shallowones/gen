@@ -1,0 +1,155 @@
+extends layout
+
+block content
+
+  -
+    var indexItems = [
+      'Дизельные электростанции',
+      'Дизельные электростанции контейнерного типа',
+      'Газопоршневые электростанции и Мини-ТЭС',
+      'Газопоршневые электростанции и Мини-ТЭС',
+      'Производство контейнеров любого типа',
+      'Монтаж и сервисное обслуживание'
+    ]
+
+    var advantages = [
+      {
+        img: 'advantages-1',
+        name: 'Гарантии',
+        desc: 'На резервное оборудование – 2 года, на постоянно работающие ДГУ – 1000 моточасов. В случае поломки выполняем бесплатный ремонт.'
+      },
+      {
+        img: 'advantages-2',
+        name: 'Круглосуточная поддержка\n',
+        desc: 'Наши инженеры работают в режиме 24/7. Вы можете звонить 24 часа в сутки в любой день недели. Поможем решить ваши проблемы даже в праздничные дни.'
+      },
+      {
+        img: 'advantages-3',
+        name: 'Качество',
+        desc: 'На резервное оборудование – 2 года, на постоянно работающие ДГУ – 1000 моточасов. В случае поломки выполняем бесплатный ремонт.'
+      },
+      {
+        img: 'advantages-4',
+        name: 'Широкая география',
+        desc: 'Работаем по всей России и СНГ.'
+      },
+      {
+        img: 'advantages-5',
+        name: 'Способы оплаты',
+        desc: 'При покупке ДЭС предоплата для физических лиц – наличными, для юридических – по безналичному расчёту. Оплата технического обслуживания ДГУ – после оказания услуг.'
+      },
+      {
+        img: 'advantages-6',
+        name: 'Доставка',
+        desc: 'Доставка по Москве– от 4 часов, в другие регионы России – от 1 дня. Вы можете также самостоятельно забрать генераторные установки с нашего склада.'
+      }
+    ]
+
+  .page.index
+    header.header
+      .header-top
+        .wrapper
+          .header-top-left
+            input(type="text").header-search__input
+            button(type="button").header-search__button
+          .header-top-right
+            .header-phone 8 800 5004099
+            .header-phone +7 495 5454580
+            button(type="button").header-phone__button Заказать звонок
+      .header-bottom
+        .header-bottom-wrap
+          .wrapper
+            a(href="#").header__logo Ваш спутник в мире энергетики
+            nav.menu
+              ul
+                li
+                  a(href="#") Оборудование
+                li
+                  a(href="#") Аренда
+                li
+                  a(href="#") Сервис
+                li
+                  a(href="#") Проекты
+                li
+                  a(href="#") О компании
+                li
+                  a(href="#") Контакты
+        .header-bottom-index
+          .header-bottom__desc Наши преимущества
+          .swiper-container.header-bottom__slider.js-header-bottom
+            .swiper-wrapper
+              .swiper-slide Круглосуточная поддержка
+    main.main
+      .wrapper-min.block
+        h1.h1.blue Продажа, установка, аренда и сервисное обслуживание электростанций
+        p.
+          Мы реализуем дизельные и газопоршневые электростанции и генераторы и
+          занимаемся производством собственного оборудования. Многолетний опыт
+          профессиональной деятельности и отлаженные каналы поставок позволяют
+          предлагать клиентам выгодные цены и эффективно решать все поставленные задачи.
+      .swiper-container.index-slider.js-index-slider
+        .swiper-wrapper
+          each item, index in indexItems
+            a(href="#", style="background-image: url('images/index-" + (index + 1) +".png')").swiper-slide
+              span
+                i=item
+        .swiper-button-next
+        .swiper-button-prev
+        .swiper-pagination
+      .main-first
+        .wrapper-min
+          .main-first-left
+            p.
+              Компания “Генмастер” основана<br>
+              в 2010 году.<br>
+              В штате трудятся квалифицированные специалисты, прошедшие обучение<br>
+              на заводах-изготовителях.
+            p.
+              Мы реализуем дизельные и газопоршневые электростанции и генераторы и
+              занимаемся производством собственного оборудования. Многолетний опыт
+              профессиональной деятельности и отлаженные каналы поставок позволяют
+              предлагать клиентам выгодные цены и эффективно решать все поставленные задачи.
+          .main-first-right
+            .swiper-container.main-slider.js-main-slider
+              .swiper-wrapper
+                .swiper-slide(style="background-image: url('../images/main-1.png')")
+                .swiper-slide(style="background-image: url('../images/main-1.png')")
+                .swiper-slide(style="background-image: url('../images/main-1.png')")
+                .swiper-slide(style="background-image: url('../images/main-1.png')")
+              .swiper-pagination
+      .wrapper.block
+        h3.h3 Преимущества сотрудничества с компанией<br>«Генмастер»
+        .advantages
+          each item in advantages
+            .advantages-item
+              .advantages-item__img
+                img(src='images/' + item.img + '.png')
+              .advantages-item__name=item.name
+              .advantages-item__desc=item.desc
+        .advantages-desc
+          p Хотите воспользоваться преимуществами работы с нашей компанией?
+          p Позвоните по телефону +7 495 5454580. Или отправьте заявку на сотрудничество.
+        button(type="button").button Отправить заявку
+
+
+
+
+    footer.footer
+
+
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+    br
+
+
+
