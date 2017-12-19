@@ -1,0 +1,118 @@
+extends layout
+
+block content
+
+  include mixins/header
+  include mixins/breadcrumbs
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная')
+        h1.h1.blue Контакты
+        .two
+          .col
+          .col
+            p.
+              Компания «Генмастер» специализируется на поставках и сервисном обслуживании
+              дизельных генераторов (электростанций), мини-ТЭС, газовых электростанций.
+              Мы работаем по всей России.
+        .two.min-mar
+          .col
+            p
+              b Телефоны:
+          .col
+            p
+              | +7 (495) 545-45-80 (многоканальный).
+              br
+              | +7 (800) 500-40-99 (бесплатный звонок по России).
+        .two.min-mar
+          .col
+            p
+              b Юридический и почтовый адрес:
+          .col
+            p 141280, Московская область, г. Ивантеевка, Фабричный проезд, 1.
+        .two.min-mar
+          .col
+            p
+              b E-mail:
+          .col
+            p
+              a(href="#").link info@genmaster.ru
+        .two
+          .col
+            p
+              b Адреса офисов:
+          .col
+            p Офисы и склад компании «ГенМастер» расположены на территории Москвы и Московской области.
+      .blue-block.with-map
+        .wrapper
+          .col
+            h3.h3.blue.no-bold Москва
+            b Офис и переговорная
+            p
+              | Ракетный бульвар, 16. Бизнес-центр «Алексеевская башня».
+              br
+              span.gray Часы работы: 9.00-18.00
+            h3.h3.blue.no-bold Московская область
+            b Офис и склад
+            p
+              | г. Ивантеевка, Фабричный проезд, 1.
+              br
+              span.gray Часы работы: 9.00-18.00
+          .col
+            // предполагается вставка блока с кодом карты
+            // при интеграции убрать атрибут style
+            .map(style="background-image: url('images/map.jpg')")
+      .wrapper
+        .two
+          .col
+          .col
+            h3.h3.no-mar Обратная связь
+        form(action="#").form.no-flex
+          .two
+            .col
+              label(for="input-1").form__label Ваше имя
+                span.req *
+            .col
+              .form-control
+                input(type="text", id="input-1", required).form-control__input
+          .two
+            .col
+              label(for="input-2").form__label Ваш E-mail
+                span.req *
+            .col
+              .form-control
+                input(type="text", id="input-2", required).form-control__input
+          .two
+            .col
+              label(for="input-3").form__label Сообщение
+                span.req *
+            .col
+              .form-control
+                textarea(id="input-3", required).form-control__textarea
+          .two
+            .col
+            .col
+              img(src="images/captcha.png")
+          .two
+            .col
+              label(for="input-4").form__label Повторите символы
+                span.req *
+            .col
+              .form-control
+                input(type="text", id="input-4", required).form-control__input
+          .two
+            .col
+            .col
+              input(type="checkbox", id="agree").form-control__check
+              label(for="agree").form-control__label Подтверждаю согласие на обработку персональных данных
+                span.req *
+          .two
+            .col
+            .col
+              i <span class="req">*</span> — поля, обязательные для заполнения
+          .center
+            button(type="submit").button Отправить

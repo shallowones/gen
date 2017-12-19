@@ -1,0 +1,111 @@
+extends layout
+
+block content
+
+  include mixins/header
+  include mixins/breadcrumbs
+  include mixins/table
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная', 'Оборудование', 'Дизельные генераторы (электростанции)')
+        h1.h1.blue Дизельный генератор FG Wilson P14-6S
+        .product
+          .product-left
+            .product__img(style="background-image: url('images/product.png')")
+            .product-control
+              .product-control-desc Цена по запросу
+              button(type="button").button Заказать КП
+            p.gray.
+              Приняв решение <a href="#">купить дизельный генератор</a>
+              в компании «Генмастер», вы можете быть уверены
+              в адекватности цены. Стоимость будет включать
+              не только поставку оборудования, но и пусконаладку, гарантийное сервисное обслуживание.<br>
+              Если оборудование нужно на непродолжительный срок, у нас вы можете
+              <a href="#">арендовать дизельный генератор</a>.
+            .social-block
+              .product-head Поделиться
+              // предполагается вставка дефолтных виджетов от Битрикса вместо img
+              img(src="images/social.png")
+          .product-right
+            .product-head Основные характеристики
+            .product-block
+              .product-line
+                .product-desc Производитель:
+                .product-name FG Wilson
+              .product-line
+                .product-desc Модель:
+                .product-name P14-6S
+              .product-line
+                .product-desc Страна производства:
+                .product-name Великобритания
+              .product-line
+                .product-desc Полная мощность, кВА:
+                .product-name 13,00
+              .product-line
+                .product-desc Активная мощность, кВт:
+                .product-name 13,00
+              .product-line
+                .product-desc Число фаз:
+                .product-name 3
+            .product-head Расход топлива, л/ч
+            .product-block
+              .product-line
+                .product-desc При нагрузке 100%, л/ч:
+                .product-name 4,3
+              .product-line
+                .product-desc Емкость топливного бака, л:
+                .product-name 66
+            .product-head Габариты и масса
+            .product-block
+              .product-line
+                .product-desc Длина, мм:
+                .product-name 1500
+              .product-line
+                .product-desc Ширина, мм:
+                .product-name 620
+              .product-line
+                .product-desc Высота, мм:
+                .product-name 1115
+              .product-line
+                .product-desc Масса, кг:
+                .product-name 434
+            .product-head Тип исполнения
+            .product-block
+              a(href="#").link.inline Открытое
+              a(href="#").link.inline В кожухе
+              a(href="#").link.inline На шасси
+              a(href="#").link.inline В контейнере
+            .product-head Генератор
+            .product-block
+              .product-line
+                .product-desc Производитель альтернатора:
+                .product-name Leroy Somer
+              .product-line
+                .product-desc Модель альтернатора:
+                .product-name LLB1114L
+            .product-head Двигатель
+            .product-block
+              .product-line
+                .product-desc Марка двигателя:
+                .product-name Perkins
+              .product-line
+                .product-desc Модель двигателя:
+                .product-name 404D-22G1
+              .product-line
+                .product-desc Рабочий объем, л:
+                .product-name 2.2
+              .product-line
+                .product-desc Количество цилиндров и их расположение:
+                .product-name 4 в ряд
+              .product-line
+                .product-desc Количество оборотов, об/мин:
+                .product-name 1500
+        h3.h3.gray.center Похожие товары
+        +table(1)
+        p.center.gray.no-mar полный каталог
+          br
+          a(href="#") Дизельные генераторы (Электростанции)

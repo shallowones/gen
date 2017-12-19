@@ -1,0 +1,5 @@
+mixin breadcrumbs(...items)
+  nav.breadcrumbs
+    each item, index in items
+      a(href="#").breadcrumbs__item= item
+      span.delimiter /

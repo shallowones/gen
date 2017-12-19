@@ -2,16 +2,12 @@ extends layout
 
 block content
 
-  -
-    var indexItems = [
-      'Дизельные электростанции',
-      'Дизельные электростанции контейнерного типа',
-      'Газопоршневые электростанции и Мини-ТЭС',
-      'Газопоршневые электростанции и Мини-ТЭС',
-      'Производство контейнеров любого типа',
-      'Монтаж и сервисное обслуживание'
-    ]
+  include mixins/header
+  include mixins/breadcrumbs
+  include mixins/index-slider
+  include mixins/projects
 
+  -
     var advantages = [
       {
         img: 'advantages-1',
@@ -45,111 +41,140 @@ block content
       }
     ]
 
-  .page.index
-    header.header
-      .header-top
-        .wrapper
-          .header-top-left
-            input(type="text").header-search__input
-            button(type="button").header-search__button
-          .header-top-right
-            .header-phone 8 800 5004099
-            .header-phone +7 495 5454580
-            button(type="button").header-phone__button Заказать звонок
-      .header-bottom
-        .header-bottom-wrap
-          .wrapper
-            a(href="#").header__logo Ваш спутник в мире энергетики
-            nav.menu
-              ul
-                li
-                  a(href="#") Оборудование
-                li
-                  a(href="#") Аренда
-                li
-                  a(href="#") Сервис
-                li
-                  a(href="#") Проекты
-                li
-                  a(href="#") О компании
-                li
-                  a(href="#") Контакты
-        .header-bottom-index
-          .header-bottom__desc Наши преимущества
-          .swiper-container.header-bottom__slider.js-header-bottom
+    var videos = [
+      {
+        href: 'https://youtu.be/4LfJnj66HVQ',
+        img: 'video-1'
+      },
+      {
+        href: 'https://youtu.be/9v_rtaye2yY',
+        img: 'video-2'
+      },
+      {
+        href: 'https://youtu.be/3M_5oYU-IsU',
+        img: 'video-3'
+      },
+      {
+        href: 'https://youtu.be/6Prfg3vyZkA',
+        img: 'video-4'
+      }
+    ]
+
+    var partners = [
+      'partner-1',
+      'partner-2',
+      'partner-3',
+      'partner-4',
+      'partner-5',
+      'partner-6',
+      'partner-1',
+      'partner-2',
+      'partner-2'
+    ]
+
+  +header(true)
+
+  main.main
+    .wrapper-min.block.center
+      h1.h1.blue Продажа, установка, аренда и сервисное обслуживание электростанций
+      p.
+        Мы реализуем дизельные и газопоршневые электростанции и генераторы и
+        занимаемся производством собственного оборудования. Многолетний опыт
+        профессиональной деятельности и отлаженные каналы поставок позволяют
+        предлагать клиентам выгодные цены и эффективно решать все поставленные задачи.
+    +index-slider
+    .main-first
+      .wrapper-min
+        .main-first-left
+          p.
+            Компания “Генмастер” основана<br>
+            в 2010 году.<br>
+            В штате трудятся квалифицированные специалисты, прошедшие обучение<br>
+            на заводах-изготовителях.
+          p.
+            Мы реализуем дизельные и газопоршневые электростанции и генераторы и
+            занимаемся производством собственного оборудования. Многолетний опыт
+            профессиональной деятельности и отлаженные каналы поставок позволяют
+            предлагать клиентам выгодные цены и эффективно решать все поставленные задачи.
+        .main-first-right
+          .swiper-container.main-slider.js-main-slider
             .swiper-wrapper
-              .swiper-slide Круглосуточная поддержка
-    main.main
-      .wrapper-min.block
-        h1.h1.blue Продажа, установка, аренда и сервисное обслуживание электростанций
-        p.
-          Мы реализуем дизельные и газопоршневые электростанции и генераторы и
-          занимаемся производством собственного оборудования. Многолетний опыт
-          профессиональной деятельности и отлаженные каналы поставок позволяют
-          предлагать клиентам выгодные цены и эффективно решать все поставленные задачи.
-      .swiper-container.index-slider.js-index-slider
+              .swiper-slide(style="background-image: url('../images/main-1.png')")
+              .swiper-slide(style="background-image: url('../images/main-1.png')")
+              .swiper-slide(style="background-image: url('../images/main-1.png')")
+              .swiper-slide(style="background-image: url('../images/main-1.png')")
+            .swiper-pagination
+    .wrapper.block.center
+      h3.h3 Преимущества сотрудничества с компанией<br>«Генмастер»
+      .advantages
+        each item in advantages
+          .advantages-item
+            .advantages-item__img
+              img(src='images/' + item.img + '.png')
+            .advantages-item__name=item.name
+            .advantages-item__desc=item.desc
+      .advantages-desc
+        p Хотите воспользоваться преимуществами работы с нашей компанией?
+        p Позвоните по телефону +7 495 5454580. Или отправьте заявку на сотрудничество.
+      button(type="button").button Отправить заявку
+    .main-second
+      h3.h3 Видео компании
+      .swiper-container.videos.js-videos
         .swiper-wrapper
-          each item, index in indexItems
-            a(href="#", style="background-image: url('images/index-" + (index + 1) +".png')").swiper-slide
-              span
-                i=item
+          each item in videos
+            a(href=item.href, style="background-image: url('images/" + item.img + ".png')", data-fancybox).swiper-slide
         .swiper-button-next
         .swiper-button-prev
-        .swiper-pagination
-      .main-first
-        .wrapper-min
-          .main-first-left
-            p.
-              Компания “Генмастер” основана<br>
-              в 2010 году.<br>
-              В штате трудятся квалифицированные специалисты, прошедшие обучение<br>
-              на заводах-изготовителях.
-            p.
-              Мы реализуем дизельные и газопоршневые электростанции и генераторы и
-              занимаемся производством собственного оборудования. Многолетний опыт
-              профессиональной деятельности и отлаженные каналы поставок позволяют
-              предлагать клиентам выгодные цены и эффективно решать все поставленные задачи.
-          .main-first-right
-            .swiper-container.main-slider.js-main-slider
-              .swiper-wrapper
-                .swiper-slide(style="background-image: url('../images/main-1.png')")
-                .swiper-slide(style="background-image: url('../images/main-1.png')")
-                .swiper-slide(style="background-image: url('../images/main-1.png')")
-                .swiper-slide(style="background-image: url('../images/main-1.png')")
-              .swiper-pagination
-      .wrapper.block
-        h3.h3 Преимущества сотрудничества с компанией<br>«Генмастер»
-        .advantages
-          each item in advantages
-            .advantages-item
-              .advantages-item__img
-                img(src='images/' + item.img + '.png')
-              .advantages-item__name=item.name
-              .advantages-item__desc=item.desc
-        .advantages-desc
-          p Хотите воспользоваться преимуществами работы с нашей компанией?
-          p Позвоните по телефону +7 495 5454580. Или отправьте заявку на сотрудничество.
-        button(type="button").button Отправить заявку
-
-
-
-
-    footer.footer
-
-
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-    br
-
-
-
+    .block
+      +projects
+    form(action="#").main-form
+      .main-form-left
+        .main-form-block
+          h3.h3 Акции и специальные предложения
+          p Для тех, кто ищет самые выгодные условия.
+          a(href="#").main-form__link Все акции и специальные предложения.
+          p Подпишитесь, чтобы быть в курсе последних акций и выгодных специальных предложений!
+          .flex
+            input(type="text", placeholder="Ваш email").main-form__input
+            button(type="button").button.blue Подписаться
+      .main-form-right
+    .block
+      h3.h3.center Нам доверяют
+      .partners-block
+        .swiper-container.partners.js-partners
+          .swiper-wrapper
+            each item in partners
+              a(href="#", style="background-image: url('images/" + item + ".png')").swiper-slide
+        .swiper-button-next.partners-next
+        .swiper-button-prev.partners-prev
+      .wrapper-min.center
+        h3.h3 Для чего нужны дизельные генераторы и газовые электрогенераторы
+      br
+      .wrapper-min
+        p.
+          Лучший вариант, обеспечивающий энергетическую независимость, – решение купить
+          электростанцию на газовом или дизельном топливе. Агрегаты данного типа
+          используют как на жилых, так и на коммерческих или муниципальных объектах.
+        h3.h3.blue.no-bold.center Преимущества дизельных генераторов
+        p.
+          Электростанции, укомплектованные дизельными двигателями, отличаются большой
+          удельной мощностью. Решение купить дизельный генератор – выбор рациональных людей.
+          Эти установки экономичны в эксплуатации: большая степень компрессии позволяет
+          использовать обедненную топливную смесь, уменьшая расход горючего.
+        p.
+          Благодаря большому моторесурсу обслуживание электростанций данного типа выполняется
+          реже, чем у аналогичного устройства, работающего на бензине. Развитие технологий
+          позволило избавиться от «детской болезни» дизелей – трудностей с запуском зимой.
+          Современные дизельные двигатели легко заводятся в любую погоду.
+        h3.h3.blue.no-bold.center Преимущества газовых генераторов
+        p.
+          Единственным недостатком газогенераторов является тот факт, что обслуживанием
+          электростанции должны заниматься квалифицированные специалисты. В остальных
+          аспектах газовые установки в приоритете.
+        p.
+          В пользу решения купить электростанцию, работающую на газообразном топливе,
+          говорит низкая стоимость пропанобутановой смеси или природного газа. Система
+          подготовки воздушно-топливной смеси в газогенераторах практически отсутствует.
+          Достаточно отрегулировать подачу воздуха. Этот фактор упрощает конструкцию
+          двигателя, способствуя повышению надежности агрегата и увеличению
+          межсервисного интервала.

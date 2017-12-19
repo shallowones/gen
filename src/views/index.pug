@@ -1,8 +1,43 @@
 -
+  var meta = [
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui'
+    },
+    {
+      name: 'apple-mobile-web-app-capable',
+      content: 'yes'
+    },
+    {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: 'black'
+    }
+  ]
+
   var pages = [
     {
       label: 'Главная',
       name: 'main'
+    },
+    {
+      label: 'Дизельные генераторы-товары',
+      name: 'generators'
+    },
+    {
+      label: 'Контакты',
+      name: 'contacts'
+    },
+    {
+      label: 'О компании',
+      name: 'about'
+    },
+    {
+      label: 'Дизельный генератор FG Wilson P14-6S',
+      name: 'product'
+    },
+    {
+      label: 'Отзывы',
+      name: 'reviews'
     }
   ]
 
@@ -11,9 +46,8 @@ html(lang="ru")
   head
     title ГенМастер
     meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui")
-    meta(name="apple-mobile-web-app-capable", content="yes")
-    meta(name="apple-mobile-web-app-status-bar-style", content="black")
+    each item in meta
+      meta(name=item.name, content=item.content)
     link(rel='stylesheet', href='css/main.css')
   body(style="overflow: hidden")
     main.index-menu

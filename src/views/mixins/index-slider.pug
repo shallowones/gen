@@ -1,0 +1,20 @@
+-
+  var indexItems = [
+    'Дизельные электростанции',
+    'Дизельные электростанции контейнерного типа',
+    'Газопоршневые электростанции и Мини-ТЭС',
+    'Газопоршневые электростанции и Мини-ТЭС',
+    'Производство контейнеров любого типа',
+    'Монтаж и сервисное обслуживание'
+  ]
+
+mixin index-slider
+  .swiper-container.index-slider.js-index-slider
+    .swiper-wrapper
+      each item, index in indexItems
+        a(href="#", style="background-image: url('images/index-" + (index + 1) + ".png')").swiper-slide
+          span
+            i=item
+    .swiper-button-next
+    .swiper-button-prev
+    .swiper-pagination

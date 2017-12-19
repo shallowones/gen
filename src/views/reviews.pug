@@ -1,0 +1,53 @@
+extends layout
+
+block content
+
+  -
+    var list = [
+      {
+        img: 'list-1',
+        name: 'ЗАО «Транссервис» Управление Недвижимостью'
+      },
+      {
+        img: 'list-2',
+        name: 'Щелковское отделение по Московской области Среднерусского банка ПАО Сбербанк'
+      },
+      {
+        img: 'list-3',
+        name: 'Администрация муниципального образования городское поселение Томилино'
+      },
+      {
+        img: 'list-4',
+        name: 'Произдственно-коммерческая фирма «ПКФ«АСК»'
+      },
+      {
+        img: 'list-5',
+        name: 'ОАО «Восточный эксперсс банк»'
+      },
+      {
+        img: 'list-6',
+        name: 'Егорычев О.О.'
+      }
+    ]
+
+    var i = 0
+
+  include mixins/header
+  include mixins/breadcrumbs
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная', 'О компании')
+        h1.h1.blue Дизельный генератор FG Wilson P14-6S
+        .list
+          while i < 3
+            each item in list
+              a(href='images/' + item.img + '.png', data-fancybox="list").list-item
+                img(src='images/' + item.img + '.png').list-item__img
+                p.list-item__desc=item.name
+            - i++
+        .center
+          button(type="button", disabled).button.load Показать ещё

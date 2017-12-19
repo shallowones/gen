@@ -1,0 +1,89 @@
+mixin header(isIndex)
+
+  -
+    var subItems = [
+      {
+        name: 'Разрешения и сертификаты',
+        active: true
+      },
+      {
+        name: 'У вас тендер?',
+        active: false
+      },
+      {
+        name: 'Вакансии',
+        active: false
+      },
+      {
+        name: 'Статьи',
+        active: false
+      },
+      {
+        name: 'Гарантии',
+        active: false
+      },
+      {
+        name: 'Доставка',
+        active: false
+      },
+      {
+        name: 'Оплата',
+        active: false
+      },
+      {
+        name: 'Отзывы',
+        active: false
+      },
+      {
+        name: 'Акции',
+        active: false
+      },
+      {
+        name: 'Новости',
+        active: false
+      }
+    ]
+
+    var subItems2 = [
+    {
+    name: 'Дизельные генераторы (электростанции)',
+    active: true
+    },
+    {
+    name: 'Запчасти к генераторам',
+    active: false
+    },
+    {
+    name: 'ИБП',
+    active: false
+    },
+    {
+    name: 'Стабилизаторы',
+    active: false
+    },
+    {
+    name: 'Мини-ТЭС',
+    active: false
+    }
+    ]
+
+  header.header
+    include ../includes/header-top
+    .header-bottom
+      .header-bottom-wrap
+        include ../includes/menu-logo
+      if (isIndex)
+        .header-bottom-index
+          .header-bottom__desc Наши преимущества
+          .swiper-container.header-bottom__slider.js-header-bottom
+            .swiper-wrapper
+              .swiper-slide Круглосуточная поддержка
+      else
+        .header-bottom-sub
+          .wrapper
+            .header-bottom-sub-block
+              each item in subItems
+                if (item.active)
+                  span.header-bottom-sub__item= item.name
+                else
+                  a(href="#").header-bottom-sub__item= item.name

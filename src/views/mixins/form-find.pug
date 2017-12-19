@@ -1,0 +1,68 @@
+mixin form-find(name, repeat)
+
+  -
+    var list = [
+      {
+        name: 'Любой',
+        checked: false
+      },
+      {
+        name: 'Airman',
+        checked: false
+      },
+      {
+        name: 'Aksa',
+        checked: false
+      },
+      {
+        name: 'Atlas Copco',
+        checked: false
+      },
+      {
+        name: 'Ausonia',
+        checked: false
+      },
+      {
+        name: 'Caterpillar',
+        checked: true
+      },
+      {
+        name: 'CTM',
+        checked: false
+      },
+      {
+        name: 'Cummins',
+        checked: false
+      },
+      {
+        name: 'Denyo',
+        checked: false
+      },
+      {
+        name: 'Elteco',
+        checked: false
+      },
+      {
+        name: 'Электростанции АД',
+        checked: false
+      }
+    ]
+
+    var i = 0
+
+    var counter = 0
+
+  .form__label= name
+  .form-control
+    input(type="text", placeholder="Найти").form-control__input
+  .form-control.list
+    while i < repeat
+      each item in list
+        .form-control-find
+          if (item.checked)
+            input(type="checkbox", id='check-' + counter, checked).form-control__check
+          else
+            input(type="checkbox", id='check-' + counter).form-control__check
+          label(for='check-' + counter).form-control__label= item.name
+        - counter++
+      - i++

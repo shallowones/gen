@@ -17,20 +17,24 @@
   var css = [
     'fonts/bundle.css',
     'js/vendor/swiper/swiper.min.css',
+    'js/vendor/fancybox/jquery.fancybox.min.css',
+    'js/vendor/jquery-ui/jquery-ui.min.css',
     'css/main.css'
   ]
 
   var js = [
     'js/vendor/jquery/jquery-3.2.1.min.js',
     'js/vendor/swiper/swiper.min.js',
+    'js/vendor/fancybox/jquery.fancybox.min.js',
+    'js/vendor/jquery-ui/jquery-ui.min.js',
     'js/app/main.js'
   ]
 
 doctype html
-html(lang="ru")
+html(lang='ru')
   head
     title ГенМастер
-    meta(charset="UTF-8")
+    meta(charset='UTF-8')
     each item in meta
       meta(name=item.name, content=item.content)
     each item in css
@@ -38,7 +42,9 @@ html(lang="ru")
 
   body
 
-    block content
+    .page
+      block content
+      include includes/footer
 
     each item in js
       script(src=item)

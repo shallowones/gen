@@ -1,0 +1,86 @@
+mixin table(count)
+
+  -
+    var table = [
+      {
+        photo: 'gen-1',
+        model: 'Дизельный генератор FG Wilson P11-16S',
+        full: '10',
+        active: '10',
+        count: '3',
+        engine: 'Mitsubishi',
+        country: 'country-1',
+        consumption: '2,0'
+      },
+      {
+        photo: 'gen-2',
+        model: 'Дизельный генератор Cummins C17D5',
+        full: '12',
+        active: '17',
+        count: '3',
+        engine: 'Perkins',
+        country: 'country-2',
+        consumption: '2,0'
+      },
+      {
+        photo: 'gen-1',
+        model: 'Дизельный генератор FG Wilson P14-6S',
+        full: '13',
+        active: '13',
+        count: '3',
+        engine: 'Perkins',
+        country: 'country-1',
+        consumption: '4,3'
+      },
+      {
+        photo: 'gen-1',
+        model: 'Дизельный генератор FG Wilson P22-6',
+        full: '16',
+        active: '20',
+        count: '3',
+        engine: 'Perkins',
+        country: 'country-1',
+        consumption: '4,8'
+      },
+      {
+        photo: 'gen-3',
+        model: 'Дизельный генератор YorPower YXP20RSC Canopied',
+        full: '16',
+        active: '20',
+        count: '3',
+        engine: 'Perkins',
+        country: 'country-2',
+        consumption: '5,3'
+      }
+    ]
+
+    var i = 0
+
+  table.table.second-big.center
+    tbody
+      tr
+        th.left Фото
+        th Модель
+        th Полная мощность
+        th Активная мощность
+        th Число фаз
+        th Двигатель
+        th Страна
+        th Расход топлива
+        th Цена
+      while i < count
+        each item in table
+          tr
+            td
+              img(src='images/' + item.photo + '.png')
+            td.left= item.model
+            td= item.full
+            td= item.active
+            td= item.count
+            td= item.engine
+            td
+              img(src='images/' + item.country + '.png')
+            td= item.consumption
+            td
+              button(type="button").button Заказать КП
+        - i++
