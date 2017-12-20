@@ -661,6 +661,8 @@ button:hover {
   width: 60%;
   text-align: center;
   height: 100%;
+  padding-right: 3rem;
+  position: relative;
 }
 .header-top-right {
   width: 40%;
@@ -675,25 +677,35 @@ button:hover {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-left: 3rem;
 }
 .header-search__input {
   border: none;
   border-bottom: 1px solid #bfd4e9;
-  width: 31.25rem;
+  width: 0;
   height: 1.5rem;
   background: none;
   color: #fff;
   font-family: 'Verdana', sans-serif;
   outline: none;
-  padding: 0 12px;
+  padding: 0;
   font-size: 14px;
   margin-top: .5rem;
+  transition: .3s;
+}
+.header-search__input.show {
+  width: 31.25rem;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 .header-search__button {
   background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.0.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Layer_1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20512%20512%22%20style%3D%22enable-background%3Anew%200%200%20512%20512%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%22512px%22%20height%3D%22512px%22%3E%0A%3Cg%3E%0A%09%3Cg%3E%0A%09%09%3Cpath%20d%3D%22M504.858%2C470.377L356.034%2C321.554c-5.086%2C6.289-10.523%2C12.356-16.322%2C18.156c-5.799%2C5.801-11.867%2C11.238-18.159%2C16.324%20%20%20%20l148.825%2C148.825C475.14%2C509.619%2C481.38%2C512%2C487.62%2C512c6.24%2C0%2C12.48-2.381%2C17.239-7.144%20%20%20%20C514.38%2C495.336%2C514.38%2C479.9%2C504.858%2C470.377z%22%20fill%3D%22%23FFFFFF%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%09%3Cg%3E%0A%09%09%3Cpath%20d%3D%22M178.801%2C0C80.051-0.002%2C0%2C80.051%2C0%2C178.8s80.051%2C178.803%2C178.8%2C178.803c40.612%2C0%2C78.056-13.549%2C108.076-36.363%20%20%20%20c12.953-9.843%2C24.521-21.41%2C34.364-34.362c22.814-30.021%2C36.363-67.465%2C36.363-108.078C357.604%2C80.049%2C277.55%2C0%2C178.801%2C0z%20%20%20%20%20M268.201%2C203.181c0%2C0%2C0%2C0-0.002%2C0c-13.465%2C0-24.381-10.918-24.379-24.381c0.002-17.367-6.762-33.693-19.043-45.976%20%20%20%20c-12.281-12.281-28.607-19.043-45.974-19.043c-13.465%2C0.002-24.383-10.914-24.383-24.379c0-13.465%2C10.915-24.381%2C24.379-24.383%20%20%20%20c30.393-0.002%2C58.966%2C11.835%2C80.459%2C33.326c21.491%2C21.493%2C33.326%2C50.067%2C33.324%2C80.459%20%20%20%20C292.58%2C192.267%2C281.664%2C203.181%2C268.201%2C203.181z%22%20fill%3D%22%23FFFFFF%22%2F%3E%0A%09%3C%2Fg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A") no-repeat center;
   width: 3rem;
   height: 100%;
   background-size: 19px;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 .header-phone {
   font-weight: bold;
@@ -963,6 +975,20 @@ span.header-bottom-sub__item {
   display: -ms-flexbox;
   display: flex;
 }
+.flex.center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+.column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
 .swiper-container.header-bottom__slider .swiper-slide {
   font-family: 'Roboto', sans-serif;
   color: #fff;
@@ -1077,8 +1103,47 @@ span.header-bottom-sub__item {
 .swiper-container.videos .swiper-slide:last-child {
   margin-right: 0;
 }
-.swiper-container.videos .swiper-button-next,
-.swiper-container.videos .swiper-button-prev {
+.swiper-container.partners .swiper-slide {
+  width: 168px;
+  height: 104px;
+  border: 1px solid #1f4973;
+  margin-right: 30px;
+  background: no-repeat center;
+  background-size: 150px;
+}
+.swiper-container.detail-slider {
+  height: 359px;
+  margin-bottom: 2rem;
+}
+.swiper-container.detail-slider .swiper-slide {
+  width: 100%;
+  height: 100%;
+  background: no-repeat center;
+  background-size: cover;
+}
+.swiper-container.detail-slider-thumbs {
+  height: 115px;
+}
+.swiper-container.detail-slider-thumbs .swiper-slide {
+  width: 174px;
+  height: 100%;
+  background: no-repeat center;
+  background-size: cover;
+  margin-right: 24px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+.swiper-container.detail-slider-thumbs .swiper-slide:hover {
+  cursor: pointer;
+}
+.swiper-container.detail-slider-thumbs .swiper-slide-active {
+  border-color: #1f4973;
+}
+.videos-block {
+  position: relative;
+}
+.videos-next,
+.videos-prev {
   background: rgba(0, 0, 0, 0.5) no-repeat center;
   display: inline-block;
   vertical-align: top;
@@ -1088,25 +1153,17 @@ span.header-bottom-sub__item {
   top: 50%;
   transition: background-color 0.3s;
 }
-.swiper-container.videos .swiper-button-next:hover,
-.swiper-container.videos .swiper-button-prev:hover {
+.videos-next:hover,
+.videos-prev:hover {
   background-color: #000;
 }
-.swiper-container.videos .swiper-button-next {
+.videos-next {
   background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20477.175%20477.175%22%20style%3D%22enable-background%3Anew%200%200%20477.175%20477.175%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%22512px%22%20height%3D%22512px%22%3E%0A%3Cg%3E%0A%09%3Cpath%20d%3D%22M360.731%2C229.075l-225.1-225.1c-5.3-5.3-13.8-5.3-19.1%2C0s-5.3%2C13.8%2C0%2C19.1l215.5%2C215.5l-215.5%2C215.5%20%20%20c-5.3%2C5.3-5.3%2C13.8%2C0%2C19.1c2.6%2C2.6%2C6.1%2C4%2C9.5%2C4c3.4%2C0%2C6.9-1.3%2C9.5-4l225.1-225.1C365.931%2C242.875%2C365.931%2C234.275%2C360.731%2C229.075z%20%20%20%22%20fill%3D%22%23FFFFFF%22%2F%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
-  right: 0;
+  right: 4.625rem;
 }
-.swiper-container.videos .swiper-button-prev {
+.videos-prev {
   background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2019.1.0%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20477.175%20477.175%22%20style%3D%22enable-background%3Anew%200%200%20477.175%20477.175%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%22512px%22%20height%3D%22512px%22%3E%0A%3Cg%3E%0A%09%3Cpath%20d%3D%22M145.188%2C238.575l215.5-215.5c5.3-5.3%2C5.3-13.8%2C0-19.1s-13.8-5.3-19.1%2C0l-225.1%2C225.1c-5.3%2C5.3-5.3%2C13.8%2C0%2C19.1l225.1%2C225%20%20%20c2.6%2C2.6%2C6.1%2C4%2C9.5%2C4s6.9-1.3%2C9.5-4c5.3-5.3%2C5.3-13.8%2C0-19.1L145.188%2C238.575z%22%20fill%3D%22%23FFFFFF%22%2F%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
-  left: 0;
-}
-.swiper-container.partners .swiper-slide {
-  width: 168px;
-  height: 104px;
-  border: 1px solid #1f4973;
-  margin-right: 30px;
-  background: no-repeat center;
-  background-size: 150px;
+  left: 4.625rem;
 }
 .partners {
   width: calc(100% - 151px);
@@ -1257,6 +1314,61 @@ span.header-bottom-sub__item {
   text-align: center;
 }
 .projects__item:hover {
+  text-decoration: none;
+}
+.project {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 2rem;
+}
+.project-left,
+.project-right {
+  width: 570px;
+}
+.project-block {
+  margin-left: -30px;
+}
+.project-item {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 30px 3rem 0;
+}
+.project-item > .gray {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 1.25rem;
+}
+.project-item__wrap {
+  position: relative;
+  width: 270px;
+  height: 170px;
+  background: no-repeat center;
+  background-size: cover;
+}
+.project-item__wrap > span {
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  padding: 6px 12px;
+  text-decoration: underline;
+}
+.project-item:hover {
+  text-decoration: none;
+}
+.project-item:hover .project-item__wrap > span {
   text-decoration: none;
 }
 .footer {
@@ -1504,6 +1616,7 @@ span.header-bottom-sub__item {
   overflow-y: auto;
   overflow-x: hidden;
   height: 364px;
+  margin-left: 0;
 }
 .form-control__check {
   display: none;
@@ -1591,6 +1704,13 @@ span.header-bottom-sub__item {
   font-size: 14px;
   padding: .75rem 1rem;
 }
+.form-control.transparent {
+  background-color: transparent;
+  border: none;
+  height: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+}
 .form-range {
   margin-bottom: 3rem;
 }
@@ -1650,13 +1770,69 @@ span.header-bottom-sub__item {
   font-size: inherit;
   padding-left: 30px;
 }
+.form-blue {
+  background-color: #bfd4e9;
+}
+.popup {
+  display: block;
+  padding: 3rem 2rem;
+  max-width: 40rem;
+}
+.popup-line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 1.5rem;
+}
+.popup-line .form-control {
+  width: 370px;
+}
+.popup-line .form-control__input {
+  height: 40px;
+}
+.popup-line:last-child {
+  margin-bottom: 0;
+}
+.popup-left {
+  width: 170px;
+  margin-right: 2rem;
+  text-align: right;
+}
+.popup-left > .form__label {
+  max-width: 120px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1.5rem;
+  margin-bottom: 0;
+}
+.popup-left + p {
+  margin: 0 0 1rem;
+}
+.popup .button {
+  padding-left: 40px;
+  padding-right: 40px;
+}
+.popup-aside {
+  padding-left: 6rem;
+  margin-bottom: 2rem;
+}
+.popup .form-control__check + .form-control__label {
+  padding-left: 32px;
+  line-height: 1.5rem;
+}
+.popup .form-control__label {
+  font-size: 16px;
+}
+.display-none {
+  display: none;
+}
 .delimiter {
   color: #727272;
   display: inline-block;
   vertical-align: middle;
-}
-.text-center {
-  text-align: center;
 }
 .mar-bottom {
   margin-bottom: 1rem;
@@ -1732,6 +1908,10 @@ span.header-bottom-sub__item {
 }
 .link.inline:first-child {
   margin-left: 0;
+}
+.link.bl {
+  display: block;
+  margin-bottom: .5rem;
 }
 .map {
   width: 100%;
@@ -1840,4 +2020,33 @@ span.header-bottom-sub__item {
   font-size: 12px;
   line-height: 18px;
   margin-bottom: 0;
+}
+.jBox-Modal .jBox-container {
+  box-shadow: none;
+  border-radius: 0;
+}
+.jBox-Modal .jBox-content {
+  padding: 0;
+}
+.jBox-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.jBox-closeButton {
+  display: none;
+}
+.close {
+  display: inline-block;
+  vertical-align: top;
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2018.1.1%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20212.982%20212.982%22%20style%3D%22enable-background%3Anew%200%200%20212.982%20212.982%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%22512px%22%20height%3D%22512px%22%3E%0A%3Cg%20id%3D%22Close%22%3E%0A%09%3Cpath%20style%3D%22fill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%22%20d%3D%22M131.804%2C106.491l75.936-75.936c6.99-6.99%2C6.99-18.323%2C0-25.312%20%20%20c-6.99-6.99-18.322-6.99-25.312%2C0l-75.937%2C75.937L30.554%2C5.242c-6.99-6.99-18.322-6.99-25.312%2C0c-6.989%2C6.99-6.989%2C18.323%2C0%2C25.312%20%20%20l75.937%2C75.936L5.242%2C182.427c-6.989%2C6.99-6.989%2C18.323%2C0%2C25.312c6.99%2C6.99%2C18.322%2C6.99%2C25.312%2C0l75.937-75.937l75.937%2C75.937%20%20%20c6.989%2C6.99%2C18.322%2C6.99%2C25.312%2C0c6.99-6.99%2C6.99-18.322%2C0-25.312L131.804%2C106.491z%22%20fill%3D%22%231f4973%22%2F%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A") no-repeat center;
+  background-size: 16px;
+  transition: background-image 0.3s;
+}
+.close:hover {
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%0A%3C!--%20Generator%3A%20Adobe%20Illustrator%2018.1.1%2C%20SVG%20Export%20Plug-In%20.%20SVG%20Version%3A%206.00%20Build%200)%20%20--%3E%0A%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20version%3D%221.1%22%20id%3D%22Capa_1%22%20x%3D%220px%22%20y%3D%220px%22%20viewBox%3D%220%200%20212.982%20212.982%22%20style%3D%22enable-background%3Anew%200%200%20212.982%20212.982%3B%22%20xml%3Aspace%3D%22preserve%22%20width%3D%22512px%22%20height%3D%22512px%22%3E%0A%3Cg%20id%3D%22Close%22%3E%0A%09%3Cpath%20style%3D%22fill-rule%3Aevenodd%3Bclip-rule%3Aevenodd%3B%22%20d%3D%22M131.804%2C106.491l75.936-75.936c6.99-6.99%2C6.99-18.323%2C0-25.312%20%20%20c-6.99-6.99-18.322-6.99-25.312%2C0l-75.937%2C75.937L30.554%2C5.242c-6.99-6.99-18.322-6.99-25.312%2C0c-6.989%2C6.99-6.989%2C18.323%2C0%2C25.312%20%20%20l75.937%2C75.936L5.242%2C182.427c-6.989%2C6.99-6.989%2C18.323%2C0%2C25.312c6.99%2C6.99%2C18.322%2C6.99%2C25.312%2C0l75.937-75.937l75.937%2C75.937%20%20%20c6.989%2C6.99%2C18.322%2C6.99%2C25.312%2C0c6.99-6.99%2C6.99-18.322%2C0-25.312L131.804%2C106.491z%22%20fill%3D%22%23276099%22%2F%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3Cg%3E%0A%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A");
 }

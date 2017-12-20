@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="js/vendor/swiper/swiper.min.css">
     <link rel="stylesheet" href="js/vendor/fancybox/jquery.fancybox.min.css">
     <link rel="stylesheet" href="js/vendor/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="js/vendor/jbox/jBox.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -19,12 +20,60 @@
                 <div class="wrapper">
                   <div class="header-top-left">
                     <input class="header-search__input" type="text">
-                    <button class="header-search__button" type="button"></button>
+                    <button class="header-search__button js-search" type="button"></button>
                   </div>
                   <div class="header-top-right">
                     <div class="header-phone">8 800 5004099</div>
                     <div class="header-phone">+7 495 5454580</div>
-                    <button class="header-phone__button" type="button">Заказать звонок</button>
+                    <button class="header-phone__button js-popup" type="button" data-target="#back-call">Заказать звонок</button>
+                    <div class="display-none" id="back-call">
+                      <form class="form form-blue popup" action="#"><i class="close"></i>
+                        <h3 class="h3 blue no-bold center">Заказать обратный звонок</h3>
+                        <div class="popup-line">
+                          <div class="popup-left">
+                            <label class="form__label" for="input-1">ФИО<span class="req">*</span></label>
+                          </div>
+                          <div class="form-control">
+                            <input class="form-control__input" type="text" id="input-1">
+                          </div>
+                        </div>
+                        <div class="popup-line">
+                          <div class="popup-left">
+                            <label class="form__label" for="input-2">Компания</label>
+                          </div>
+                          <div class="form-control">
+                            <input class="form-control__input" type="text" id="input-2">
+                          </div>
+                        </div>
+                        <div class="popup-line">
+                          <div class="popup-left">
+                            <label class="form__label" for="input-3">Телефон<span class="req">*</span></label>
+                          </div>
+                          <div class="form-control">
+                            <input class="form-control__input" type="text" id="input-3">
+                          </div>
+                        </div>
+                        <div class="popup-line">
+                          <div class="popup-left"></div><img src="images/captcha.png">
+                        </div>
+                        <div class="popup-line">
+                          <div class="popup-left">
+                            <label class="form__label" for="input-4">Повторите символы<span class="req">*</span></label>
+                          </div>
+                          <div class="form-control">
+                            <input class="form-control__input" type="text" id="input-4">
+                          </div>
+                        </div>
+                        <div class="popup-line">
+                          <div class="popup-left"></div>
+                          <p><span class="req">*</span> — поля, обязательные для заполнения</p>
+                        </div>
+                        <div class="popup-line">
+                          <div class="popup-left"></div>
+                          <button class="button white" type="submit">Отправить</button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -281,6 +330,7 @@
     <script src="js/vendor/swiper/swiper.min.js"></script>
     <script src="js/vendor/fancybox/jquery.fancybox.min.js"></script>
     <script src="js/vendor/jquery-ui/jquery-ui.min.js"></script>
+    <script src="js/vendor/jbox/jBox.min.js"></script>
     <script src="js/app/main.js"></script>
   </body>
 </html>

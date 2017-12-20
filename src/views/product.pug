@@ -18,7 +18,70 @@ block content
             .product__img(style="background-image: url('images/product.png')")
             .product-control
               .product-control-desc Цена по запросу
-              button(type="button").button Заказать КП
+              button(type="button", data-target="#order").button.js-popup Заказать КП
+              #order.display-none
+                form(action="#").form.form-blue.popup
+                  i.close
+                  h3.h3.blue.no-bold.center Заказать коммерческое предложение FG Wilson P14-6S
+                  .popup-aside
+                    p Тип исполнения
+                    .form-control.clear
+                      input(type="radio", name="radio", id="radio-1").form-control__radio
+                      label(for="radio-1").form-control__label Открытое
+                    .form-control.clear
+                      input(type="radio", name="radio", id="radio-2").form-control__radio
+                      label(for="radio-2").form-control__label В кожухе
+                    .form-control.clear
+                      input(type="radio", name="radio", id="radio-3").form-control__radio
+                      label(for="radio-3").form-control__label На шасси
+                    .form-control.clear
+                      input(type="radio", name="radio", id="radio-4", checked).form-control__radio
+                      label(for="radio-4").form-control__label В контейнере
+                  .popup-line
+                    .popup-left
+                      label(for="input-01").form__label ФИО<span class="req">*</span>
+                    .form-control
+                      input(type="text", id="input-01").form-control__input
+                  .popup-line
+                    .popup-left
+                      label(for="input-02").form__label Компания
+                    .form-control
+                      input(type="text", id="input-02").form-control__input
+                  .popup-line
+                    .popup-left
+                      label(for="input-03").form__label Телефон<span class="req">*</span>
+                    .form-control
+                      input(type="text", id="input-03").form-control__input
+                  .popup-line
+                    .popup-left
+                      label(for="input-04").form__label E-mail
+                    .form-control
+                      input(type="text", id="input-04").form-control__input
+                  .popup-line
+                    .popup-left
+                      label(for="input-05").form__label Город
+                    .form-control
+                      input(type="text", id="input-05").form-control__input
+                  .popup-line
+                    .popup-left
+                    img(src="images/captcha.png")
+                  .popup-line
+                    .popup-left
+                      label(for="input-06").form__label Повторите символы<span class="req">*</span>
+                    .form-control
+                      input(type="text", id="input-06").form-control__input
+                  .popup-line
+                    .popup-left
+                    .form-control.clear
+                      input(type="checkbox", id="input-07", checked).form-control__check
+                      label(for="input-07").form-control__label
+                        | Подтверждаю согласие на обработку персональных данных
+                  .popup-line
+                    .popup-left
+                    p <span class="req">*</span> — поля, обязательные для заполнения
+                  .popup-line
+                    .popup-left
+                    button(type="submit").button.white Отправить
             p.gray.
               Приняв решение <a href="#">купить дизельный генератор</a>
               в компании «Генмастер», вы можете быть уверены

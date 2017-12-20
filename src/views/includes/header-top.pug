@@ -2,8 +2,42 @@
   .wrapper
     .header-top-left
       input(type="text").header-search__input
-      button(type="button").header-search__button
+      button(type="button").header-search__button.js-search
     .header-top-right
       .header-phone 8 800 5004099
       .header-phone +7 495 5454580
-      button(type="button").header-phone__button Заказать звонок
+      button(type="button", data-target="#back-call").header-phone__button.js-popup Заказать звонок
+      #back-call.display-none
+        form(action="#").form.form-blue.popup
+          i.close
+          h3.h3.blue.no-bold.center Заказать обратный звонок
+          .popup-line
+            .popup-left
+              label(for="input-1").form__label ФИО<span class="req">*</span>
+            .form-control
+              input(type="text", id="input-1").form-control__input
+          .popup-line
+            .popup-left
+              label(for="input-2").form__label Компания
+            .form-control
+              input(type="text", id="input-2").form-control__input
+          .popup-line
+            .popup-left
+              label(for="input-3").form__label Телефон<span class="req">*</span>
+            .form-control
+              input(type="text", id="input-3").form-control__input
+          .popup-line
+            .popup-left
+            img(src="images/captcha.png")
+          .popup-line
+            .popup-left
+              label(for="input-4").form__label Повторите символы<span class="req">*</span>
+            .form-control
+              input(type="text", id="input-4").form-control__input
+          .popup-line
+            .popup-left
+            p <span class="req">*</span> — поля, обязательные для заполнения
+          .popup-line
+            .popup-left
+            button(type="submit").button.white Отправить
+

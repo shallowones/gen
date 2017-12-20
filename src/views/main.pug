@@ -119,12 +119,14 @@ block content
       button(type="button").button Отправить заявку
     .main-second
       h3.h3 Видео компании
-      .swiper-container.videos.js-videos
-        .swiper-wrapper
-          each item in videos
-            a(href=item.href, style="background-image: url('images/" + item.img + ".png')", data-fancybox).swiper-slide
-        .swiper-button-next
-        .swiper-button-prev
+      .videos-block
+        .swiper-container.videos.js-videos
+          .swiper-wrapper
+            each count in [1, 2]
+              each item in videos
+                a(href=item.href, style="background-image: url('images/" + item.img + ".png')", data-fancybox).swiper-slide
+        .swiper-button-next.videos-next
+        .swiper-button-prev.videos-prev
     .block
       +projects
     form(action="#").main-form

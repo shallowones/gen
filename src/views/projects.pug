@@ -1,0 +1,123 @@
+extends layout
+
+block content
+
+  -
+    var radios = [
+      {
+        name: 'Любая',
+        checked: false
+      },
+      {
+        name: 'Банковская сфера',
+        checked: false
+      },
+      {
+        name: 'Нефтегазовая сфера',
+        checked: false
+      },
+      {
+        name: 'ЖКХ',
+        checked: false
+      },
+      {
+        name: 'Промышленность',
+        checked: false
+      },
+      {
+        name: 'IT, связь и телекоммуникации',
+        checked: true
+      },
+      {
+        name: 'Строительный сектор',
+        checked: false
+      },
+      {
+        name: 'Культмассовые мероприятия',
+        checked: false
+      }
+    ]
+
+    var secondRadios = [
+      {
+        name: 'Любые',
+        checked: false
+      },
+      {
+        name: 'Поставка электростанций',
+        checked: false
+      },
+      {
+        name: 'Аренда электростанций',
+        checked: false
+      },
+      {
+        name: 'Сервисное обслуживание',
+        checked: false
+      },
+      {
+        name: 'Монтаж',
+        checked: false
+      },
+      {
+        name: 'ГПУ?',
+        checked: false
+      },
+      {
+        name: 'Ремонт',
+        checked: false
+      }
+    ]
+
+    var projects = [
+      'Энергообеспечение ГБУЗ МО "СЦРКБ" Родильного отделения',
+      'Обеспечения резервного электроснабжения Санатория "Золотой Колос", Крым',
+      'Обеспечение электроэнергией строительства загородной резиденции для владельца большой корпорации',
+      'Обслуживание и эксплуатация Мини-ТЭЦ во Дворце водных видов спорта'
+    ]
+
+  include mixins/header
+  include mixins/breadcrumbs
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная')
+        h1.h1.blue Проекты
+        p Более сотни довольных заказчиков. <a href="#">Почитать отзывы</a>.
+      .blue-block
+        form(action="#").form.wrapper
+          .form-col
+            .form__label Отрасли
+            .form-control.list.transparent
+              each item, index in radios
+                .form-control-find
+                  if (item.checked)
+                    input(type="checkbox", id='check-' + index, checked).form-control__check
+                  else
+                    input(type="checkbox", id='check-' + index).form-control__check
+                  label(for='check-' + index).form-control__label=item.name
+          .form-col
+            .form__label Виды услуг
+            .form-control.list.transparent
+              each item, index in secondRadios
+                .form-control-find
+                  if (item.checked)
+                    input(type="checkbox", id='check-0' + index, checked).form-control__check
+                  else
+                    input(type="checkbox", id='check-0' + index).form-control__check
+                  label(for='check-0' + index).form-control__label=item.name
+          .form-col.flex.center.column
+            button(type="button").button.easy.mar-bottom Очистить параметры
+            button(type="button").button.white.full Подобрать
+      .wrapper.block
+        .project-block
+          each count in [1, 2, 3]
+            each item, index in projects
+              a(href="#").project-item
+                .project-item__wrap(style='background-image: url(images/project-' + (index + 1) + '.jpg)')
+                  span=item
+        .center
+          button(type="button").button Показать ещё

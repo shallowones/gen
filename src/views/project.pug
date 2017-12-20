@@ -1,0 +1,53 @@
+extends layout
+
+block content
+
+  include mixins/header
+  include mixins/breadcrumbs
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная', 'Проекты')
+        h1.h1.blue Энергообеспечение ГБУЗ МО "СЦРКБ" Родильного отделения
+        .project
+          .project-left
+            .swiper-container.detail-slider.js-slider
+              .swiper-wrapper
+                .swiper-slide(style="background-image: url('images/project-1.jpg');")
+                .swiper-slide(style="background-image: url('images/project-2.jpg');")
+                .swiper-slide(style="background-image: url('images/project-3.jpg');")
+                .swiper-slide(style="background-image: url('images/project-4.jpg');")
+            .swiper-container.detail-slider-thumbs.js-slider-thumbs
+              .swiper-wrapper
+                .swiper-slide(style="background-image: url('images/project-1.jpg');")
+                .swiper-slide(style="background-image: url('images/project-2.jpg');")
+                .swiper-slide(style="background-image: url('images/project-3.jpg');")
+                .swiper-slide(style="background-image: url('images/project-4.jpg');")
+          .project-right
+            .product-head Отрасль:
+            .product-block
+              .product-desc
+                a(href="#").link.inline ЖКХ
+            .product-head Вид работ:
+            .product-block
+              a(href="#").link.bl Монтаж
+              a(href="#").link.bl Поставка электростанций
+              a(href="#").link.bl Сервисное обслуживание
+            .product-head Объект, месторасположение:
+            .product-block
+              p Ступинская Центральная Районная Клиническая больница Родильное отделение
+            .product-head Энергоустановка, мощность:
+            .product-block
+              p АД-200С-Т400 в блок-контейнере Север с системой автоматики и АВР
+            .product-head Описание:
+            .product-block
+              p.
+                Сотрудники компании выполнили ответственное и важное задание по
+                обеспечению электроэнергией Родильного дома! Произвели поставку, монтаж и
+                пуско-наладочные работы системы гарантированного электроснабжения, тем
+                самым обеспечили безперебойную работу отделения!
+        .center
+          a(href="#").link Все проекты

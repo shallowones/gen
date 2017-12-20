@@ -1,4 +1,4 @@
-(function ($, Swiper) {
+(function ($, Swiper, jBox) {
   $(function () {
 
     // текстовый слайдер в хедере
@@ -45,8 +45,8 @@
         loop: false,
         slidesPerView: 'auto',
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
+          nextEl: '.videos-next',
+          prevEl: '.videos-prev'
         }
       })
     }
@@ -81,5 +81,64 @@
       })
     }
 
+    // слайдер (детальные)
+    {
+      const slider = new Swiper('.js-slider', {
+        slidesPerView: 1,
+        loop: true,
+        loopedSlides: 4,
+        grabCursor: true
+      })
+      new Swiper('.js-slider-thumbs', {
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true,
+        loop: true,
+        loopedSlides: 4,
+        controller: {
+          control: slider
+        },
+        on: {
+          init: function () {
+            slider.controller.control = this
+          }
+        }
+      })
+    }
+
+    // поиск в шапке
+    {
+      const $input = $('.header-search__input')
+      const showClass = 'show'
+      $('.js-search').on('click', () => {
+        if ($input.hasClass(showClass)) {
+          $input.removeClass('show')
+        } else {
+          $input
+            .addClass('show')
+            .focus()
+        }
+      })
+    }
+
+    // popup
+    {
+      new jBox('Modal', {
+        attach: '.js-popup',
+        width: 'auto',
+        height: 'auto',
+        onOpen: function () {
+          const $target = $(this.source.data('target'))
+          this.setContent($target.html())
+          $target.html('')
+          this.content.find('.close').on('click', this.close.bind(this))
+        },
+        onCloseComplete: function () {
+          const $target = $(this.source.data('target'))
+          $target.append(this.content.html())
+        }
+      })
+    }
+
   })
-})(jQuery, Swiper)
+})(jQuery, Swiper, jBox)

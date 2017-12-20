@@ -1,0 +1,43 @@
+extends layout
+
+block content
+
+  -
+    var articles = [
+      {
+        name: 'Выбор генераторной установки для дома или дачи',
+        date: '28 мая 2015'
+      },
+      {
+        name: 'Выбор электростанции для компании или предприятия',
+        date: '28 мая 2015'
+      },
+      {
+        name: 'Как предотвратить повышение расхода топлива',
+        date: '27 марта 2015'
+      },
+      {
+        name: 'Однофазная или трехфазная электростанция – что выбрать',
+        date: '28 мая 2014'
+      }
+    ]
+
+  include mixins/header
+  include mixins/breadcrumbs
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная', 'О компании')
+        h1.h1.blue Статьи
+        .project-block
+          each count in [1, 2, 3]
+            each item, index in articles
+              a(href="#").project-item
+                .gray=item.date
+                .project-item__wrap(style='background-image: url(images/article-' + (index + 1) + '.png)')
+                  span=item.name
+        .center
+          button(type="button").button Показать ещё
