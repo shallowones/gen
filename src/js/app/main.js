@@ -108,9 +108,10 @@
 
     // поиск в шапке
     {
-      const $input = $('.header-search__input')
+      const $search = $('.js-search')
+      const $input = $search.parent().find('.header-search__input')
       const showClass = 'show'
-      $('.js-search').on('click', () => {
+      $search.on('click', () => {
         if ($input.hasClass(showClass)) {
           $input.removeClass('show')
         } else {
@@ -136,6 +137,34 @@
         onCloseComplete: function () {
           const $target = $(this.source.data('target'))
           $target.append(this.content.html())
+        }
+      })
+    }
+
+    // mobile
+    {
+      const $page = $('.page')
+      const $mobile = $('.mobile')
+      const $button = $('.mobile__button')
+      const $mobileMenu = $mobile.find('.menu')
+      $button.on('click', () => { $page.toggleClass('mobile-open') })
+      $mobileMenu.find('.parent').each((index, el) => {
+        const $parent = $(el)
+        $parent.find('> span').on('click', () => {
+          $parent
+            .toggleClass('open')
+            .find('.menu').slideToggle(300)
+        })
+      })
+      const $search = $('.js-search-mobile')
+      const $searchParent = $search.parent()
+      const showClass = 'show'
+      $search.on('click', () => {
+        if ($searchParent.hasClass(showClass)) {
+          $searchParent.removeClass('show')
+        } else {
+          $searchParent.addClass('show')
+          $searchParent.find('.header-search__input').focus()
         }
       })
     }

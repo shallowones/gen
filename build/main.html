@@ -68,8 +68,7 @@
                           <div class="popup-left"></div>
                           <p><span class="req">*</span> — поля, обязательные для заполнения</p>
                         </div>
-                        <div class="popup-line">
-                          <div class="popup-left"></div>
+                        <div class="center">
                           <button class="button white" type="submit">Отправить</button>
                         </div>
                       </form>
@@ -79,7 +78,8 @@
               </div>
               <div class="header-bottom">
                 <div class="header-bottom-wrap">
-                  <div class="wrapper"><a class="header__logo" href="#">Ваш спутник в мире энергетики</a>
+                  <div class="wrapper">
+                    <button class="mobile__button js-mobile" type="button"><span></span><span></span><span></span><span></span></button><a class="header__logo" href="#"><span>Ваш спутник в мире энергетики</span></a>
                     <nav class="menu">
                       <ul>
                         <li><a href="#">Оборудование</a></li>
@@ -138,10 +138,10 @@
             <div class="main-first-right">
               <div class="swiper-container main-slider js-main-slider">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide" style="background-image: url('../images/main-1.png');"></div>
-                  <div class="swiper-slide" style="background-image: url('../images/main-1.png');"></div>
-                  <div class="swiper-slide" style="background-image: url('../images/main-1.png');"></div>
-                  <div class="swiper-slide" style="background-image: url('../images/main-1.png');"></div>
+                  <div class="swiper-slide" style="background-image: url('images/main-1.png');"></div>
+                  <div class="swiper-slide" style="background-image: url('images/main-1.png');"></div>
+                  <div class="swiper-slide" style="background-image: url('images/main-1.png');"></div>
+                  <div class="swiper-slide" style="background-image: url('images/main-1.png');"></div>
                 </div>
                 <div class="swiper-pagination"></div>
               </div>
@@ -201,7 +201,7 @@
           </div>
         </div>
         <div class="block">
-                <div class="center">
+                <div class="center wrapper">
                   <h3 class="h3">Реализованные проекты</h3>
                   <p>
                     Компания «ГенМастер» успешно реализовала уже сотни проектов. В числе наших<br>
@@ -211,10 +211,8 @@
                     ДГУ и ГПУ для бесперебойного электроснабжения<br>
                     во всех сферах бизнеса от 200 000 рублей!
                   </p><br>
-                  <div class="wrapper">
-                    <h3 class="h3 blue no-bold">Наши проекты по отраслям:</h3>
-                    <div class="projects"><a class="projects__item" href="#">Банковская сфера</a><a class="projects__item" href="#">Нефтегазовая сфера</a><a class="projects__item" href="#">IT, связь и телекоммуникации</a><a class="projects__item" href="#">Культурно-массовые мероприятия</a><a class="projects__item" href="#">ЖКХ</a><a class="projects__item" href="#">Промышленность</a><a class="projects__item" href="#">Строительный сектор</a>
-                    </div>
+                  <h3 class="h3 blue no-bold">Наши проекты по отраслям:</h3>
+                  <div class="projects"><a class="projects__item" href="#">Банковская сфера</a><a class="projects__item" href="#">Нефтегазовая сфера</a><a class="projects__item" href="#">IT, связь и телекоммуникации</a><a class="projects__item" href="#">Культурно-массовые мероприятия</a><a class="projects__item" href="#">ЖКХ</a><a class="projects__item" href="#">Промышленность</a><a class="projects__item" href="#">Строительный сектор</a>
                   </div>
                         <div class="swiper-container index-slider js-index-slider">
                           <div class="swiper-wrapper"><a class="swiper-slide" href="#" style="background-image: url('images/index-1.png');"><span><i>Дизельные электростанции</i></span></a><a class="swiper-slide" href="#" style="background-image: url('images/index-2.png');"><span><i>Дизельные электростанции контейнерного типа</i></span></a><a class="swiper-slide" href="#" style="background-image: url('images/index-3.png');"><span><i>Газопоршневые электростанции и Мини-ТЭС</i></span></a><a class="swiper-slide" href="#" style="background-image: url('images/index-4.png');"><span><i>Газопоршневые электростанции и Мини-ТЭС</i></span></a><a class="swiper-slide" href="#" style="background-image: url('images/index-5.png');"><span><i>Производство контейнеров любого типа</i></span></a><a class="swiper-slide" href="#" style="background-image: url('images/index-6.png');"><span><i>Монтаж и сервисное обслуживание</i></span></a>
@@ -231,7 +229,7 @@
               <h3 class="h3">Акции и специальные предложения</h3>
               <p>Для тех, кто ищет самые выгодные условия.</p><a class="main-form__link" href="#">Все акции и специальные предложения.</a>
               <p>Подпишитесь, чтобы быть в курсе последних акций и выгодных специальных предложений!</p>
-              <div class="flex">
+              <div class="flex wrap">
                 <input class="main-form__input" type="text" placeholder="Ваш email">
                 <button class="button blue" type="button">Подписаться</button>
               </div>
@@ -251,7 +249,7 @@
           </div>
           <div class="wrapper-min center">
             <h3 class="h3">Для чего нужны дизельные генераторы и газовые электрогенераторы</h3>
-          </div><br>
+          </div>
           <div class="wrapper-min">
             <p>
               Лучший вариант, обеспечивающий энергетическую независимость, – решение купить
@@ -342,6 +340,39 @@
         </div>
         <div class="footer-bottom">© 2010-2017 genmaster.ru</div>
       </footer>
+      <div class="mobile">
+        <div class="mobile-wrapper">
+          <nav class="menu wrapper">
+            <ul>
+              <li class="parent"><span>Оборудование</span>
+                <nav class="menu">
+                  <ul>
+                    <li><a href="#">Разрешения и сертификаты</a></li>
+                    <li><a href="#">У вас тендер?</a></li>
+                    <li><a href="#">Вакансии</a></li>
+                  </ul>
+                </nav>
+              </li>
+              <li><a href="#">Аренда</a></li>
+              <li><a href="#">Сервис</a></li>
+              <li><a href="#">Проекты</a></li>
+              <li class="active"><span>О компании</span></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+          </nav>
+          <div class="wrapper">
+            <div class="header-top-right">
+              <div class="header-phone">8 800 5004099</div>
+              <div class="header-phone">+7 495 5454580</div>
+              <button class="header-phone__button js-popup" type="button" data-target="#back-call">Заказать звонок</button>
+            </div>
+            <div class="header-top-left">
+              <input class="header-search__input" type="text">
+              <button class="header-search__button js-search-mobile" type="button"></button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     <script src="js/vendor/jquery/jquery-3.2.1.min.js"></script>
     <script src="js/vendor/swiper/swiper.min.js"></script>

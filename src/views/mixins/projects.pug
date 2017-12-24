@@ -13,7 +13,7 @@ mixin projects
       'Строительный сектор'
     ]
 
-  .center
+  .center.wrapper
     h3.h3&attributes(attributes) Реализованные проекты
     p.
       Компания «ГенМастер» успешно реализовала уже сотни проектов. В числе наших<br>
@@ -22,9 +22,8 @@ mixin projects
       ДГУ и ГПУ для бесперебойного электроснабжения<br>
       во всех сферах бизнеса от 200 000 рублей!
     br
-    .wrapper
-      h3.h3.blue.no-bold Наши проекты по отраслям:
-      .projects
-        each item in projects
-          a(href="#").projects__item= item
+    h3.h3.blue.no-bold Наши проекты по отраслям:
+    .projects
+      each item in projects
+        a(href="#").projects__item= item
     +index-slider
