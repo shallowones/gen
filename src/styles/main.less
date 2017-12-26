@@ -1062,6 +1062,70 @@ span.header-bottom-sub__item {
         height: 260px;
       }
     }
+
+    &.gens {
+
+      & .swiper {
+
+        &-slide {
+          max-width: 100%;
+          width: 270px;
+          text-align: center;
+          background-color: #bfd4e9;
+          margin-right: 28px;
+
+          & .gen {
+
+            &-title {
+              font-weight: bold;
+              padding: 2rem 1rem 1.875rem;
+            }
+
+            &-img {
+              width: ~"calc(100% - 2px)";
+              height: 170px;
+              margin: 0 auto;
+              background-color: #fff;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+
+              & > img {
+                max-width: 100%;
+                max-height: 100%;
+              }
+            }
+
+            &-desc {
+              padding: 1.875rem 1rem 1.5rem;
+              font-size: 12px;
+              line-height: 16px;
+            }
+          }
+        }
+      }
+    }
+
+    &.gallery {
+      margin: 3rem 0;
+
+      & .swiper {
+
+        &-slide {
+          max-width: 100%;
+          width: 270px;
+          height: 170px;
+          margin-right: 30px;
+
+          & .gallery-wrap {
+            width: 100%;
+            height: 100%;
+            background: no-repeat center;
+            background-size: cover;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -1772,10 +1836,22 @@ span.header-bottom-sub__item {
     }
   }
 
-  & ul {
+  & ul, & ol {
     list-style-type: none;
     margin: 0;
     padding: 0;
+
+    & a {
+      color: #1f4973;
+      text-decoration: underline;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  & ul {
 
     & > li {
       position: relative;
@@ -1801,12 +1877,34 @@ span.header-bottom-sub__item {
         }
       }
 
-      & a {
-        color: #1f4973;
-        text-decoration: underline;
+      @media @plan {
+        margin-bottom: 1rem;
+        padding-left: 3rem;
+      }
+    }
+  }
 
-        &:hover {
-          text-decoration: none;
+  & ol {
+
+    & > li {
+      counter-increment: step-counter;
+      padding-left: 102px;
+      position: relative;
+      margin-bottom: 1.25rem;
+
+      &:before {
+        content: counter(step-counter) + '.';
+        position: absolute;
+        left: 70px;
+        top: 0;
+        color: #1f4973;
+
+        @media @plan {
+          left: 1.5rem;
+        }
+
+        @media @mobile {
+          left: 1rem;
         }
       }
 
@@ -2139,6 +2237,14 @@ span.header-bottom-sub__item {
         padding-right: 0;
       }
     }
+
+    &.invalid {
+      border-color: #cc0000;
+
+      & .form-control__input, & .form-control__textarea {
+        background-color: #ffdfdf;
+      }
+    }
   }
 
   &-range {
@@ -2331,6 +2437,10 @@ span.header-bottom-sub__item {
   &-aside {
     padding-left: 6rem;
     margin-bottom: 2rem;
+
+    @media @plan-mini {
+      padding-left: 0;
+    }
   }
 
   & .form-control__check + .form-control__label {
@@ -2410,6 +2520,36 @@ span.header-bottom-sub__item {
     }
   }
 
+  &.normal {
+
+    & th, & td {
+      padding: 16px 20px;
+
+      &:first-child {
+        padding-left: 20px;
+      }
+
+      &:last-child {
+        padding-right: 20px;
+      }
+    }
+
+    & th {
+      background-color: #1f4973;
+      color: #fff;
+      padding-top: 12px;
+      line-height: 20px;
+    }
+
+    & tr {
+      transition: background-color .3s;
+
+      &:hover {
+        background-color: #eaeaea;
+      }
+    }
+  }
+
   @media @plan {
     display: block;
     font-size: 14px;
@@ -2449,6 +2589,7 @@ span.header-bottom-sub__item {
       display: block;
       width: 100%;
       padding-right: 0;
+      margin-bottom: 0;
     }
   }
 
@@ -2501,6 +2642,7 @@ span.header-bottom-sub__item {
   @media @mobile {
     display: block;
     width: 100%;
+    margin-bottom: 1rem;
   }
 }
 
@@ -2659,6 +2801,22 @@ span.header-bottom-sub__item {
   &-head {
     font-weight: bold;
     margin-bottom: 1.5rem;
+
+    &.plus {
+      padding-left: 26px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: ~"calc(50% - 7px)";
+        width: 15px;
+        height: 15px;
+        background: data-uri('../images/svg/plus.svg') no-repeat center;
+        background-size: 100%;
+      }
+    }
 
     @media @plan {
       margin-bottom: 1rem;
@@ -3063,5 +3221,118 @@ span.header-bottom-sub__item {
         white-space: nowrap;
       }
     }
+  }
+}
+
+.lease {
+  margin: 1.5rem 0 2.5rem;
+
+  &__img {
+    width: 170px;
+    float: left;
+    margin: 0 2.5rem 1rem 0;
+    max-width: 100%;
+
+    @media @plan-mini {
+      margin-right: 1.5rem;
+    }
+
+    @media @mobile {
+      float: none;
+      margin-right: 0;
+    }
+  }
+
+  &-desc {
+    line-height: 1.5rem;
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  @media @mobile {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.info {
+  background-color: #bfd4e9;
+  padding: 3rem 2rem 2.75rem 98px;
+  position: relative;
+
+  & > p:first-child {
+    margin-bottom: .5rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    left: 36px;
+    top: 3rem;
+    width: 42px;
+    height: 42px;
+    background: data-uri('../images/svg/lamp.svg') no-repeat center;
+    background-size: 100%;
+
+    @media @plan-mini {
+      left: 10px;
+      top: 1rem;
+    }
+  }
+
+  @media @plan-mini {
+    padding: 1rem 1rem 1rem 60px;
+  }
+}
+
+.sidebar {
+
+  & > .link {
+    display: block;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+      text-decoration: underline;
+      color: #5f8ab4;
+    }
+
+    @media @plan-mini {
+      font-size: 14px;
+    }
+  }
+}
+
+.img-right {
+  line-height: 1.5rem;
+
+  & > img {
+    float: right;
+    width: 292px;
+    max-width: 100%;
+    margin: 0 0 1rem 2rem;
+
+    @media @plan-mini {
+      float: none;
+      display: block;
+      margin: 0 0 1rem;
+    }
+
+    @media @mobile {
+      margin: 0 auto;
+    }
+  }
+
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  @media @plan-mini {
+    margin-bottom: 2rem;
   }
 }

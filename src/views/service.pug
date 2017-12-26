@@ -1,0 +1,75 @@
+extends layout
+
+block content
+
+  -
+    var table = [
+    {
+      one: '1500-2000 кВА',
+      two: '213 500',
+      three: '3 000',
+      four: '3 000',
+      five: '10 2000'
+    },
+    {
+      one: '1500-2000 кВА',
+      two: '213 500',
+      three: '3 000',
+      four: '3 000',
+      five: '10 2000'
+    }
+    ]
+
+  include mixins/header
+  include mixins/breadcrumbs
+
+  +header(false)
+
+  main.main
+    .detail
+      .wrapper
+        +breadcrumbs('Главная', 'Услуги', 'Сервисное обслуживание дизельных генераторов и электростанций')
+        h1.h1.blue Сервисное обслуживание дизельных генераторов и электростанций
+        .two
+          .col
+            include includes/sidebar
+          .col
+            .info.wrapper-detail
+              p Позвоните в сервисный отдел «ГенМастер», проконсультируйтесь, как обслуживать ваше оборудование
+              p +7 (495) 545-45-80 или +7 (800) 500-40-99
+            .swiper-container.gallery.js-header-bottom
+              .swiper-wrapper
+                a(href="images/detail-1.png", data-fancybox="gallery").swiper-slide
+                  .gallery-wrap(style="background-image: url('images/detail-1.png')")
+                a(href="images/detail-2.png", data-fancybox="gallery").swiper-slide
+                  .gallery-wrap(style="background-image: url('images/detail-2.png')")
+                a(href="images/detail-3.png", data-fancybox="gallery").swiper-slide
+                  .gallery-wrap(style="background-image: url('images/detail-3.png')")
+            p.
+              В штате компании «ГенМастер» трудятся специалисты, которые отлично разбираются в
+              особенностях работы с оборудованием таких марок, как Volvo Penta, Cummins, SDMO,
+              FG Wilson, Caterpillar и т. д. Мы выполним качественное техническое обслуживание
+              электростанций и их ремонт в полном соответствии с рекомендациями производителей.
+              Регулярное обслуживание и ремонт электростанций поможет поддерживать их в
+              работоспособном состоянии, не допуская длительных перебоев в подаче электроэнергии.
+            table.table.normal
+              tbody
+                tr
+                  th Мощность
+                  th ТО-1 (руб.)
+                  th ТО-1 (руб.)
+                  th ТО-1 (руб.)
+                  th Испытание под нагрузкой Москва,<br>МО в ​течение часа (руб.)
+                each item in [1, 2, 3, 4]
+                  tr
+                    td 1500-2000 кВА
+                    td 213 500
+                    td 3 000
+                    td 3 000
+                    td(align="center") 10 2000
+                tr
+                  td(colspan="4", align="center") Выезд на диагностику Москва, МО
+                  td(align="center") 9 500
+                tr
+                  td(colspan="4", align="center") Профессиональный визит Москва, МО
+                  td(align="center") 9 500
