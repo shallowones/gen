@@ -814,6 +814,7 @@ span.header-bottom-sub__item {
   &-container {
 
     &.header-bottom__slider {
+      max-width: 100%;
 
       & .swiper-slide {
         font-family: 'Roboto', sans-serif;
@@ -835,6 +836,7 @@ span.header-bottom-sub__item {
     }
 
     &.index-slider {
+      max-width: 100%;
       width: ~"calc(100% - 9.25rem)";
       margin: 0 auto;
       padding-bottom: 3rem;
@@ -969,14 +971,15 @@ span.header-bottom-sub__item {
     }
 
     &.videos {
+      max-width: 100%;
       width: 1230px;
       margin: 0 auto 2px;
 
       & .swiper {
 
         &-slide {
-          width: 18.75rem;
-          height: 10.625rem;
+          width: 300px;
+          height: 170px;
           background: no-repeat center;
           background-size: cover;
           margin-right: 10px;
@@ -986,9 +989,39 @@ span.header-bottom-sub__item {
           }
         }
       }
+
+      &.videos-small {
+
+        & .swiper-wrapper {
+          justify-content: center;
+
+          @media @plan {
+            justify-content: flex-start;
+          }
+        }
+
+        & ~ .videos-next, & ~ .videos-prev {
+          display: none;
+
+          @media @plan {
+            display: block;
+          }
+        }
+      }
+
+      @media @plan {
+        width: 100%;
+        padding: 0 2rem;
+      }
+
+      @media @mobile {
+        padding-left: 0;
+        padding-right: 0;
+      }
     }
 
     &.partners {
+      max-width: 100%;
 
       & .swiper {
 
@@ -1008,6 +1041,7 @@ span.header-bottom-sub__item {
     }
 
     &.detail-slider {
+      max-width: 100%;
       height: 359px;
       margin-bottom: 2rem;
 
@@ -1064,6 +1098,7 @@ span.header-bottom-sub__item {
     }
 
     &.gens {
+      max-width: 100%;
 
       & .swiper {
 
@@ -1107,6 +1142,7 @@ span.header-bottom-sub__item {
     }
 
     &.gallery {
+      max-width: 100%;
       margin: 3rem 0;
 
       & .swiper {
@@ -2060,6 +2096,7 @@ span.header-bottom-sub__item {
   &-control {
     background-color: #fff;
     border: 1px solid #727272;
+    padding-top: 1px;
 
     &__input {
       display: block;
@@ -2665,6 +2702,15 @@ span.header-bottom-sub__item {
       @media @plan {
         margin-left: 1rem;
       }
+    }
+  }
+
+  &-block {
+    margin-left: -1rem;
+    margin-bottom: -1rem;
+
+    & .inline:first-child {
+      margin-left: 1rem;
     }
   }
 

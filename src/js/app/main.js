@@ -4,9 +4,10 @@
     // текстовый слайдер в хедере
     {
       new Swiper('.js-header-bottom', {
-        loop: false,
+        loop: true,
         grabCursor: true,
-        slidesPerView: 'auto'
+        slidesPerView: 'auto',
+        autoplay: true
       })
     }
 
@@ -47,6 +48,14 @@
         navigation: {
           nextEl: '.videos-next',
           prevEl: '.videos-prev'
+        },
+        on: {
+          init: function () {
+            const MIN_SLIDES_LENGTH = 4
+            if (this.slides.length < MIN_SLIDES_LENGTH) {
+              this.$el.addClass('videos-small')
+            }
+          }
         }
       })
     }

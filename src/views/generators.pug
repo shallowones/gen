@@ -8,6 +8,20 @@ block content
   include mixins/projects
   include mixins/table
 
+  -
+    var links = [
+      'до 5 кВт',
+      'от 5 до 10 кВт',
+      'от 10 до 20 кВт',
+      'от 20 до 30 кВт',
+      'от 30 до 50 кВт',
+      'от 50 до 100 кВт',
+      'от 100 до 200 кВт',
+      'от 200 до 300 кВт',
+      'от 300 до 400 кВт',
+      'от 400 до 500 кВт'
+    ]
+
   +header(false)
 
   main.main
@@ -61,6 +75,14 @@ block content
           // добавить атрибут disabled на время выполнения ajax-запроса
           // (появится лоадер)
           button(type="button").button.load Показать ещё
+      h3.h3.blue.no-bold.center Генераторы по мощности
+      .blue-block
+        .wrapper
+          .link-block
+            each item in links
+              a(href="#").link.inline= item
+      br
+      br
       .wrapper
         h3.h3.center.gray Продажа дизельных генераторов (электростанций)
         .two
