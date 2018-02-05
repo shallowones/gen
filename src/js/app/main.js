@@ -140,6 +140,7 @@
         onOpen: function () {
           const $target = $(this.source.data('target'))
           this.setContent($target.html())
+          console.log(this.source.data('target'))
           $target.html('')
           this.content.find('.close').on('click', this.close.bind(this))
         },
@@ -175,6 +176,18 @@
           $searchParent.addClass('show')
           $searchParent.find('.header-search__input').focus()
         }
+      })
+    }
+
+    // ошибки формы при фокусе
+    {
+      const CLASS_INVALID = 'invalid'
+
+      $('.invalid > .form-control__input, .invalid > .form-control__textarea').focus((e) => {
+        $(e.currentTarget).parent().removeClass(CLASS_INVALID)
+      })
+      $('input[type=checkbox].invalid, input[type=radio].invalid').on('change', (e) => {
+        $(e.currentTarget).removeClass(CLASS_INVALID)
       })
     }
 

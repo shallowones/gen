@@ -177,7 +177,7 @@
                   <label class="form__label" for="input-1">Ваше имя<span class="req">*</span></label>
                 </div>
                 <div class="col">
-                  <div class="form-control">
+                  <div class="form-control invalid">
                     <input class="form-control__input" type="text" id="input-1" required>
                   </div>
                 </div>
@@ -197,7 +197,7 @@
                   <label class="form__label" for="input-3">Сообщение<span class="req">*</span></label>
                 </div>
                 <div class="col">
-                  <div class="form-control">
+                  <div class="form-control invalid">
                     <textarea class="form-control__textarea" id="input-3" required></textarea>
                   </div>
                 </div>
@@ -221,8 +221,10 @@
               <div class="two">
                 <div class="col"></div>
                 <div class="col">
-                  <input class="form-control__check" type="checkbox" id="agree">
-                  <label class="form-control__label" for="agree">Подтверждаю согласие на обработку персональных данных<span class="req">*</span></label>
+                  <input class="form-control__check invalid" type="checkbox" id="agree">
+                  <label class="form-control__label" for="agree">Подтверждаю согласие на обработку персональных данных<span class="req">*</span></label><br>
+                  <input class="form-control__radio invalid" type="radio" id="agree-2">
+                  <label class="form-control__label" for="agree-2">Подтверждаю согласие на обработку персональных данных<span class="req">*</span></label>
                 </div>
               </div>
               <div class="two">
@@ -230,9 +232,20 @@
                 <div class="col"><i><span class="req">*</span> — поля, обязательные для заполнения</i></div>
               </div>
               <div class="center">
-                <button class="button" type="submit">Отправить</button>
+                <button class="button js-popup" type="button" data-target="#success">Отправить</button>
               </div>
             </form>
+            <div class="display-none" id="success">
+              <form class="form form-blue popup" action="#"><i class="close"></i>
+                <div class="center">
+                  <h3 class="h3 blue no-bold">
+                    Заявка отправлена! Наш менеджер подготовит коммерческое предложение
+                    и свяжется с Вами в течение дня.
+                  </h3>
+                  <button class="button white" type="button" data-action="close">Продолжить</button>
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </main>

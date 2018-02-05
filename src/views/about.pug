@@ -129,7 +129,8 @@ block content
             .dignity-block
               each item, index in dignity
                 .dignity
-                  img(src='images/dignity-' + (index + 1) +'.png').dignity__img
+                  .dignity-img-block
+                    img(src='images/dignity-' + (index + 1) +'.png').dignity__img
                   p.gray= item
             h3.h3 Наша команда
             p.

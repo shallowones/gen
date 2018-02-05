@@ -2109,6 +2109,7 @@ span.header-bottom-sub__item {
       color: inherit;
       font-size: 14px;
       padding: 0 1rem;
+      transition: background-color .3s;
     }
 
     &.list {
@@ -2131,12 +2132,30 @@ span.header-bottom-sub__item {
     &__check {
       display: none;
 
-      &:checked + .form-control__label:before {
-        background: #727272 data-uri('../images/svg/check.svg') no-repeat center;
-        background-size: 10px;
+      &:checked + .form-control__label {
+        transition: color .3s;
 
-        @media @plan-mini {
-          background-size: 12px;
+        &:before {
+          background: #727272 data-uri('../images/svg/check.svg') no-repeat center;
+          background-size: 10px;
+          transition: background-color .3s, border-color .3s;
+
+          @media @plan-mini {
+            background-size: 12px;
+          }
+        }
+      }
+
+      &.invalid + .form-control__label {
+        color: #cc0000;
+
+        &:before {
+          border-color: #cc0000;
+          background-color: #ffdfdf;
+        }
+
+        & .req {
+          color: inherit;
         }
       }
     }
@@ -2187,9 +2206,11 @@ span.header-bottom-sub__item {
       display: none;
 
       & + .form-control__label {
+        transition: color .3s;
 
         &:before {
           border-radius: 100%;
+          transition: background-color .3s, border-color .3s;
         }
 
         &:after {
@@ -2214,6 +2235,19 @@ span.header-bottom-sub__item {
 
       &:checked + .form-control__label:after {
         opacity: 1;
+      }
+
+      &.invalid + .form-control__label {
+        color: #cc0000;
+
+        &:before {
+          border-color: #cc0000;
+          background-color: #ffdfdf;
+        }
+
+        & .req {
+          color: inherit;
+        }
       }
     }
 
@@ -2258,6 +2292,7 @@ span.header-bottom-sub__item {
       color: inherit;
       font-size: 14px;
       padding: .75rem 1rem;
+      transition: background-color .3s;
     }
 
     &.transparent {
@@ -2278,7 +2313,7 @@ span.header-bottom-sub__item {
     &.invalid {
       border-color: #cc0000;
 
-      & .form-control__input, & .form-control__textarea {
+      & > .form-control__input, & > .form-control__textarea {
         background-color: #ffdfdf;
       }
     }
@@ -2748,10 +2783,15 @@ span.header-bottom-sub__item {
   margin-bottom: 2.5rem;
   padding: 0 2rem;
 
+  &-img-block {
+    min-height: 80px;
+    margin-bottom: 1.5rem;
+  }
+
   &__img {
     display: block;
     max-width: 100%;
-    margin: 0 auto 1.5rem;
+    margin: 0 auto;
   }
 
   @media @desktop-mini {

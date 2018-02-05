@@ -77,7 +77,7 @@ block content
               label(for="input-1").form__label Ваше имя
                 span.req *
             .col
-              .form-control
+              .form-control.invalid
                 input(type="text", id="input-1", required).form-control__input
           .two
             .col
@@ -91,7 +91,7 @@ block content
               label(for="input-3").form__label Сообщение
                 span.req *
             .col
-              .form-control
+              .form-control.invalid
                 textarea(id="input-3", required).form-control__textarea
           .two
             .col
@@ -108,12 +108,24 @@ block content
           .two
             .col
             .col
-              input(type="checkbox", id="agree").form-control__check
+              input(type="checkbox", id="agree").form-control__check.invalid
               label(for="agree").form-control__label Подтверждаю согласие на обработку персональных данных
+                span.req *
+              br
+              input(type="radio", id="agree-2").form-control__radio.invalid
+              label(for="agree-2").form-control__label Подтверждаю согласие на обработку персональных данных
                 span.req *
           .two
             .col
             .col
               i <span class="req">*</span> — поля, обязательные для заполнения
           .center
-            button(type="submit").button Отправить
+            button(type="button", data-target="#success").button.js-popup Отправить
+        #success.display-none
+          form(action="#").form.form-blue.popup
+            i.close
+            .center
+              h3.h3.blue.no-bold.
+                Заявка отправлена! Наш менеджер подготовит коммерческое предложение
+                и свяжется с Вами в течение дня.
+              button(type="button", data-action="close").button.white Продолжить
