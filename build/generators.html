@@ -120,7 +120,7 @@
               </p>
             </div>
           </div>
-          <div class="blue-block">
+          <div class="blue-block filt">
             <form class="form wrapper" action="#">
               <div class="form-col">
                       <div class="form__label">Производители генератора</div>
@@ -371,18 +371,20 @@
                   <div class="form-range-item js-range" data-target-1="#target-1" data-target-2="#target-2" data-min="0" data-max="5000" data-step="10"></div>
                 </div>
                 <p>Число фаз</p>
-                <div class="form-control clear">
-                  <input class="form-control__radio" type="radio" name="radio" id="radio-1">
-                  <label class="form-control__label" for="radio-1">Любое</label>
+                <div class="form-line">
+                  <div class="form-control clear">
+                    <input class="form-control__radio" type="radio" name="radio" id="radio-1">
+                    <label class="form-control__label" for="radio-1">Все</label>
+                  </div>
+                  <div class="form-control clear">
+                    <input class="form-control__radio" type="radio" name="radio" id="radio-2">
+                    <label class="form-control__label" for="radio-2">1</label>
+                  </div>
+                  <div class="form-control clear">
+                    <input class="form-control__radio" type="radio" name="radio" id="radio-3" checked>
+                    <label class="form-control__label" for="radio-3">3</label>
+                  </div>
                 </div>
-                <div class="form-control clear">
-                  <input class="form-control__radio" type="radio" name="radio" id="radio-2">
-                  <label class="form-control__label" for="radio-2">1</label>
-                </div>
-                <div class="form-control clear">
-                  <input class="form-control__radio" type="radio" name="radio" id="radio-3" checked>
-                  <label class="form-control__label" for="radio-3">3</label>
-                </div><br>
                 <div class="center">
                   <button class="button easy mar-bottom" type="button">Очистить параметры</button>
                   <button class="button white full" type="button">Подобрать</button>
@@ -390,7 +392,7 @@
               </div>
             </form>
           </div>
-          <div class="wrapper block">
+          <div class="wrapper block min">
                   <table class="table second-big center">
                     <tbody>
                       <tr>

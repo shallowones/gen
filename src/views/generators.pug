@@ -39,7 +39,7 @@ block content
             В нашем каталоге представлено более 1000 моделей дизельных электростанций
             различной мощности: от 10 до 2500 кВт, среди которых вы всегда сможете
             выбрать и купить электростанцию для ваших целей!
-      .blue-block
+      .blue-block.filt
         form(action="#").form.wrapper
           .form-col
             +form-find('Производители генератора', 2)
@@ -56,20 +56,20 @@ block content
               .form-range-item.js-range(data-target-1="#target-1", data-target-2="#target-2",
               data-min="0", data-max="5000", data-step="10")
             p Число фаз
-            .form-control.clear
-              input(type="radio", name="radio", id="radio-1").form-control__radio
-              label(for="radio-1").form-control__label Любое
-            .form-control.clear
-              input(type="radio", name="radio", id="radio-2").form-control__radio
-              label(for="radio-2").form-control__label 1
-            .form-control.clear
-              input(type="radio", name="radio", id="radio-3", checked).form-control__radio
-              label(for="radio-3").form-control__label 3
-            br
+            .form-line
+              .form-control.clear
+                input(type="radio", name="radio", id="radio-1").form-control__radio
+                label(for="radio-1").form-control__label Все
+              .form-control.clear
+                input(type="radio", name="radio", id="radio-2").form-control__radio
+                label(for="radio-2").form-control__label 1
+              .form-control.clear
+                input(type="radio", name="radio", id="radio-3", checked).form-control__radio
+                label(for="radio-3").form-control__label 3
             .center
               button(type="button").button.easy.mar-bottom Очистить параметры
               button(type="button").button.white.full Подобрать
-      .wrapper.block
+      .wrapper.block.min
         +table(2)
         .center
           // добавить атрибут disabled на время выполнения ajax-запроса
