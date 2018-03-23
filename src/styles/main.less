@@ -2077,6 +2077,23 @@ span.header-bottom-sub__item {
       }
     }
 
+    &.fl {
+      display: flex;
+      flex-direction: column;
+
+      & > .form__label {
+        margin-top: auto;
+
+        @media @plan-mini {
+          margin-top: 0;
+        }
+      }
+
+      @media @plan-mini {
+        display: block;
+      }
+    }
+
     @media @plan {
       width: 32%;
     }
